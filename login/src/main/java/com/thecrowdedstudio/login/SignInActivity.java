@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,11 +38,13 @@ public class SignInActivity extends AppCompatActivity {
     public Class homeClass = null;
     public String urlPrefix = null;
     public int contentView = R.layout.activity_sign_in;
+    TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(contentView);
+        titleText = findViewById(R.id.titleText);
         if(signUpClass == null) {
             Log.e("ERROR", "Variable signUpClass must be defined");
             return;
@@ -163,5 +166,9 @@ public class SignInActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    public void setTitle(String str){
+        titleText.setText(str);
     }
 }
