@@ -31,10 +31,10 @@ public class SignUpActivity extends AppCompatActivity {
     AlertDialog dialog;
 
     //Define these in subclass
-    Class signInClass = null;
-    Class homeClass = null;
-    String urlPrefix = null;
-    int contentView = R.layout.activity_sign_up;
+    public Class signInClass = null;
+    public Class homeClass = null;
+    public String urlPrefix = null;
+    public int contentView = R.layout.activity_sign_up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

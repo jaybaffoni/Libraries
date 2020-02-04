@@ -33,10 +33,10 @@ public class SignInActivity extends AppCompatActivity {
     AlertDialog dialog;
 
     //Define these in subclass
-    Class signUpClass = null;
-    Class homeClass = null;
-    String urlPrefix = null;
-    int contentView = R.layout.activity_sign_in;
+    public Class signUpClass = null;
+    public Class homeClass = null;
+    public String urlPrefix = null;
+    public int contentView = R.layout.activity_sign_in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
