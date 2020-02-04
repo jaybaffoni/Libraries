@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#535353</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#64B5F6</color>
+
+    <color name="lightGrey">#D6D6D6</color>
+
+    <color name="picked">#000000</color>
+    <color name="notPicked">#BDBDBD</color>
+
+    <color name="correctLight">#DCEDC8</color>
+    <color name="wrongLight">#FFCDD2</color>
+    <color name="correct">#AED581</color>
+    <color name="wrong">#E57373</color>
+    <color name="neutral">#E6E6E6</color>
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="SignInActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Title Text"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Username"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Keep me signed in" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="signIn"
+        android:text="Sign In"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@null">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@null"
+            android:text="Don't have an account?" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:background="@null"
+            android:onClick="signUp"
+            android:textColor="@color/colorPrimary"
+            android:text="Sign up here" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+</LinearLayout>
