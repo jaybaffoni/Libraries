@@ -2,6 +2,7 @@ package com.thecrowdedstudio.utilities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -14,9 +15,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class RestUtility {
 
@@ -40,7 +38,12 @@ public class RestUtility {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        caller.networkReturn(response, callback);
+                        try {
+                            Thread.sleep(500);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        caller.networkSuccess(response, callback);
                     }
                 },
                 new Response.ErrorListener(){
@@ -72,7 +75,7 @@ public class RestUtility {
                             caller.networkFailure(e.toString());
                         }
 
-                        caller.networkReturn(wrapper, callback);
+                        caller.networkSuccess(wrapper, callback);
                     }
                 },
                 new Response.ErrorListener(){
@@ -97,7 +100,7 @@ public class RestUtility {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        caller.networkReturn(response, callback);
+                        caller.networkSuccess(response, callback);
                     }
                 },
                 new Response.ErrorListener(){
@@ -121,7 +124,7 @@ public class RestUtility {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        caller.networkReturn(response, callback);
+                        caller.networkSuccess(response, callback);
                     }
                 },
                 new Response.ErrorListener(){
@@ -145,7 +148,7 @@ public class RestUtility {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        caller.networkReturn(response, callback);
+                        caller.networkSuccess(response, callback);
                     }
                 },
                 new Response.ErrorListener(){
@@ -159,4 +162,7 @@ public class RestUtility {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public void setUrlPrefix(String urlPrefix) {
+        this.urlPrefix = urlPrefix;
+    }
 }
