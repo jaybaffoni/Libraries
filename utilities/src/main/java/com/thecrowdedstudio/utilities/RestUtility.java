@@ -66,14 +66,7 @@ public class RestUtility {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        JSONObject wrapper = new JSONObject();
-                        try {
-                            wrapper.put("array", response);
-                        } catch (JSONException e){
-                            caller.networkFailure(e.toString());
-                        }
-
-                        caller.networkSuccess(wrapper, callback);
+                        caller.networkSuccess(response, callback);
                     }
                 },
                 new Response.ErrorListener(){
