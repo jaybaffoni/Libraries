@@ -1,8 +1,6 @@
 package com.thecrowdedstudio.utilities;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,10 +20,10 @@ public class RestUtility {
     String urlPrefix;
     Context ctx;
 
-    public RestUtility(RestCaller caller, String urlPrefix){
+    public RestUtility(Context ctx, RestCaller caller, String urlPrefix){
         this.caller = caller;
         this.urlPrefix = urlPrefix;
-        this.ctx = (Context) caller;
+        this.ctx = ctx;
     }
 
     public void getObject(String path, final String callback){
