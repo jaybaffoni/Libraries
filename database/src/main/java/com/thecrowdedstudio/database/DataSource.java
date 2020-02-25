@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Pair;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +21,9 @@ public class DataSource {
 
     private SQLiteDatabase database;
     private DatabaseHelper dbHelper;
-    Gson gson = new Gson();
+    Gson gson = new GsonBuilder()
+            .excludeFieldsWithoutExposeAnnotation()
+            .create();
 
     public DataSource(Context context, String name, int version){
         dbHelper = new DatabaseHelper(context, name, version);

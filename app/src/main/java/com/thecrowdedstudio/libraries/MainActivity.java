@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements RestCaller {
 //            User u = (User) object;
 //            Log.e("USER", u.toString());
 //        }
-        RestUtility restUtility = new RestUtility(this, "");
+        RestUtility restUtility = new RestUtility(this, this, "");
         restUtility.getObject("https://www.fantasyfootballnerd.com/service/schedule/json/6q3d8fxxq25m", "schedule");
 
     }
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements RestCaller {
     }
 
     @Override
-    public void networkSuccess(JSONObject json, String callback) {
+    public void networkSuccess(Object json, String callback) {
         Log.e("JSON", json.toString());
     }
 
