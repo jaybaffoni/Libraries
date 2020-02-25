@@ -101,8 +101,8 @@ public class DataSource {
         return list;
     }
 
-    public void deleteRow(String tableName, int id){
-        database.delete(tableName, "id = " + id, null);
+    public void deleteRow(String tableName, String whereClause, String[] whereArgs){
+        database.delete(tableName, whereClause, whereArgs);
     }
 
 }
