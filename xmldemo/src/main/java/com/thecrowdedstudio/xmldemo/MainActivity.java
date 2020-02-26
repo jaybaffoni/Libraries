@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity implements RestCaller {
         loader.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         url = AppUtility.getStringPref(this, "hosturl");
-        restUtility = new RestUtility(this, url);
+        restUtility = new RestUtility(this, this, url);
         if("".equals(url)){
             updateHostUrl();
         } else {
-            restUtility = new RestUtility(this, url);
+            restUtility = new RestUtility(this, this, url);
             loader.show();
             restUtility.getObject("config.json", "config");
         }
@@ -129,12 +129,13 @@ public class MainActivity extends AppCompatActivity implements RestCaller {
     }
 
     @Override
-    public void networkSuccess(JSONObject json, String callback) {
+    public void networkSuccess(Object json, String callback) {
         if(loader.isShowing()) loader.dismiss();
+        JSONObject jsonObject = (JSONObject) json;
         switch(callback) {
             case "config":
                 AppUtility.savePref(this, "config", json.toString());
-                processConfigFile(json);
+                processConfigFile(jsonObject);
                 break;
             default:
                 //TODO
